@@ -1,4 +1,4 @@
-package com.andlinks.cloud.andlinkscloudprovider_demo;
+package com.andlinks.cloud.provider;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

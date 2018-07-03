@@ -1,0 +1,36 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: andlinks-cloud-provider-user
+spring:
+#  profiles:
+#    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.22:3306/cc
+    username: root
+    password: andlinks
+
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    
+## INFO
+info: 
+  app: 
+    name: @andlinks-cloud@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
