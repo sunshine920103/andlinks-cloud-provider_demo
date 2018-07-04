@@ -1,9 +1,12 @@
 package com.andlinks.cloud.provider.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
