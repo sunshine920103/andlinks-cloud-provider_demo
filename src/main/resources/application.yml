@@ -11,8 +11,11 @@ spring:
     url: jdbc:mysql://192.168.1.22:3306/cc
     username: root
     password: andlinks
+  cloud:
+    refresh:
+      refreshable: none                             #修复actuator和spring data jpa同时引入导致datasoure循环依赖的bug
 
-logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+logging:
   level:
     root: INFO
     org.hibernate: INFO
@@ -21,6 +24,10 @@ logging:                                # 配置日志级别，让hibernate打�
     
 
 eureka:
+  instance:
+      prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+
